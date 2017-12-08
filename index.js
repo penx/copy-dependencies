@@ -36,8 +36,8 @@ targetPackage.devDependencies = Object.assign(
 
 targetPackage.peerDependencies = Object.assign(
   {},
-  sourcePackage.devDependencies,
-  targetPackage.devDependencies
+  sourcePackage.peerDependencies,
+  targetPackage.peerDependencies
 );
 
-jsonfile.writeFileSync(targetPath, targetPackage);
+jsonfile.writeFileSync(targetPath, targetPackage, {spaces: 2});
