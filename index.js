@@ -22,22 +22,39 @@ var targetPath = path.join(process.cwd(), commander.args[1], 'package.json');
 var sourcePackage = jsonfile.readFileSync(sourcePath);
 var targetPackage = jsonfile.readFileSync(targetPath);
 
-targetPackage.dependencies = Object.assign(
-  {},
-  sourcePackage.dependencies,
-  targetPackage.dependencies
-);
 
-targetPackage.devDependencies = Object.assign(
-  {},
-  sourcePackage.devDependencies,
-  targetPackage.devDependencies
-);
+function merge(source, target) {
+  var merged = Object.assign(
+    {},
+    source,
+    target
+  );
+  // sort
+  return Object.keys(merged).sort().reduce((sorted, key) => {
+    sorted[key] = merged[key];
+    return sorted;
+  }, {});
+}
 
-targetPackage.peerDependencies = Object.assign(
-  {},
-  sourcePackage.peerDependencies,
-  targetPackage.peerDependencies
-);
+if(sourcePackage.dependencies) {
+  targetPackage.dependencies = merge(
+    sourcePackage.dependencies,
+    targetPackage.dependencies
+  );
+};
+
+if(sourcePackage.devDependencies) {
+  targetPackage.devDependencies = merge(
+    sourcePackage.devDependencies,
+    targetPackage.devDependencies
+  );
+};
+
+if(sourcePackage.peerDependencies) {
+  targetPackage.peerDependencies = merge(
+    sourcePackage.peerDependencies,
+    targetPackage.peerDependencies
+  );
+};
 
 jsonfile.writeFileSync(targetPath, targetPackage, {spaces: 2});
