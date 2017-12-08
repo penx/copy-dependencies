@@ -74,8 +74,6 @@ function processDependencies(sourcePkg, targetPkg, key) {
   return sorted;
 }
 
-
-
 if(sourcePackage.dependencies) {
   targetPackage.dependencies = processDependencies(
     sourcePackage,
