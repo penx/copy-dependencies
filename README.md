@@ -2,6 +2,8 @@
 
 Copy the dependencies, peerDependencies and devDependencies from one node package to another.
 
+(updates the target package.json file, does not copy any files across)
+
 ## Usage
 
 ```
