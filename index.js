@@ -26,8 +26,8 @@ var targetPackage = jsonfile.readFileSync(targetPath);
 function merge(source, target) {
   var merged = Object.assign(
     {},
-    source,
-    target
+    target,
+    source
   );
   // sort
   return Object.keys(merged).sort().reduce((sorted, key) => {
