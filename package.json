@@ -1,6 +1,6 @@
 {
   "name": "copy-dependencies",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Copy dependencies from one node package to another",
   "main": "index.js",
   "scripts": {
