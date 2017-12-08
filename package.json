@@ -1,7 +1,7 @@
 {
   "name": "copy-dependencies",
   "version": "0.0.2",
-  "description": "Copy dependencies from one node package to another",
+  "description": "Copy the dependencies, peerDependencies and devDependencies from one node package to another.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
