@@ -1,8 +1,8 @@
 # copy-dependencies
 
-Copy the dependencies, peerDependencies and devDependencies from one node package to another.
+Command line utility to copy the dependencies from one node package to another.
 
-(updates the target package.json file, does not copy any files across)
+Updates the package.json file in the target folder to include the values of dependencies, peerDependencies and devDependencies from the package.json in the source folder. Does not copy any files across.
 
 ## Usage
 
