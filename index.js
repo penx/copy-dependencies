@@ -38,7 +38,7 @@ function merge(target, source) {
   );
 }
 
-function logChanges(merged, target, pkgKey) {
+function logChanges(merged, target = {}, pkgKey) {
   var changes = Object.keys(merged).reduce((acc, key) => {
     if(merged[key] != target[key]) {
       acc[key] = merged[key];
